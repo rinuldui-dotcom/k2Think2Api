@@ -12,8 +12,10 @@ services:
       # 挂载配置文件，便于修改
       - ./client_api_keys.json:/app/client_api_keys.json
       - ./models.json:/app/models.json
+      - ./functions.json:/app/functions.json
       # 持久化数据目录
       - ./data:/app/data
+      - ./uploads:/app/uploads
     environment:
       - PYTHONUNBUFFERED=1
     restart: unless-stopped
