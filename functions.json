@@ -1,0 +1,112 @@
+{
+  "get_weather": {
+    "name": "get_weather",
+    "description": "获取指定城市的天气信息",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "city": {
+          "type": "string",
+          "description": "城市名称"
+        },
+        "unit": {
+          "type": "string",
+          "enum": ["celsius", "fahrenheit"],
+          "description": "温度单位"
+        }
+      },
+      "required": ["city"]
+    }
+  },
+  "web_search": {
+    "name": "web_search",
+    "description": "搜索网络信息",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "query": {
+          "type": "string",
+          "description": "搜索关键词"
+        },
+        "max_results": {
+          "type": "integer",
+          "description": "最大结果数量",
+          "default": 5
+        }
+      },
+      "required": ["query"]
+    }
+  },
+  "calculator": {
+    "name": "calculator",
+    "description": "执行数学计算",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "expression": {
+          "type": "string",
+          "description": "数学表达式，如 '2+3*4'"
+        }
+      },
+      "required": ["expression"]
+    }
+  },
+  "send_email": {
+    "name": "send_email",
+    "description": "发送邮件",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "to": {
+          "type": "string",
+          "description": "收件人邮箱地址"
+        },
+        "subject": {
+          "type": "string",
+          "description": "邮件主题"
+        },
+        "body": {
+          "type": "string",
+          "description": "邮件内容"
+        }
+      },
+      "required": ["to", "subject", "body"]
+    }
+  },
+  "get_stock_price": {
+    "name": "get_stock_price",
+    "description": "获取股票价格信息",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "symbol": {
+          "type": "string",
+          "description": "股票代码，如 'AAPL', '000001.SZ'"
+        }
+      },
+      "required": ["symbol"]
+    }
+  },
+  "translate_text": {
+    "name": "translate_text",
+    "description": "翻译文本",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "text": {
+          "type": "string",
+          "description": "要翻译的文本"
+        },
+        "from_lang": {
+          "type": "string",
+          "description": "源语言代码，如 'en', 'zh', 'ja'"
+        },
+        "to_lang": {
+          "type": "string",
+          "description": "目标语言代码，如 'en', 'zh', 'ja'"
+        }
+      },
+      "required": ["text", "to_lang"]
+    }
+  }
+}
